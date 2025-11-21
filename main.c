@@ -16,15 +16,13 @@ PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 static unsigned int __attribute__((aligned(16))) list[262144];
 static int running = 1;
 
-// ------------------------------------------------------------
 // CONFIG: flip these if an axis behaves inverted on your device
-// ------------------------------------------------------------
+
 static const int INVERT_ANALOG_X = 1; // left/right invert (1 = flip)
 static const int INVERT_ANALOG_Z = 1; // up/down invert (1 = flip)
 
-// ------------------------------------------------------------
 // VERTEX DATA
-// ------------------------------------------------------------
+
 typedef struct {
     unsigned int color;
     float x, y, z;
@@ -50,9 +48,8 @@ static const unsigned short __attribute__((aligned(16))) indices[] = {
     3,2,6,  3,6,7,
 };
 
-// ------------------------------------------------------------
 // EXIT CALLBACKS
-// ------------------------------------------------------------
+
 static int exit_callback(int arg1, int arg2, void *common) {
     running = 0;
     return 0;
@@ -68,18 +65,18 @@ static void setup_callbacks(void) {
     if (thid >= 0) sceKernelStartThread(thid, 0, 0);
 }
 
-// ------------------------------------------------------------
+
 // GLOBAL STATE
-// ------------------------------------------------------------
+
 static float playerX = 0.0f, playerY = 0.0f, playerZ = -3.0f;
 static float viewRotX = 0.0f, viewRotY = 0.0f;
 static float cubeRotX = 0.0f, cubeRotY = 0.0f;
 static const float moveSpeed = 0.05f;
 static const float viewSpeed = 1.5f;
 
-// ------------------------------------------------------------
+
 // INIT GU
-// ------------------------------------------------------------
+
 static void init_gu(void) {
     sceGuInit();
     sceGuStart(GU_DIRECT, list);
@@ -107,9 +104,9 @@ static void init_gu(void) {
     sceGuDisplay(GU_TRUE);
 }
 
-// ------------------------------------------------------------
+
 // INPUT + GAME UPDATE (modified: relative movement)
-// ------------------------------------------------------------
+
 static void update_input(void) {
     SceCtrlData pad;
     sceCtrlReadBufferPositive(&pad, 1);
@@ -150,9 +147,9 @@ static void update_input(void) {
     if (cubeRotY >= 360.0f) cubeRotY -= 360.0f;
 }
 
-// ------------------------------------------------------------
+
 // DRAW
-// ------------------------------------------------------------
+
 static void draw_scene(void) {
     sceGuStart(GU_DIRECT, list);
     sceGuClearColor(0xFF202020);
@@ -188,9 +185,9 @@ static void draw_scene(void) {
     sceGuSwapBuffers();
 }
 
-// ------------------------------------------------------------
+
 // MAIN
-// ------------------------------------------------------------
+
 int main(void) {
     setup_callbacks();
     sceCtrlSetSamplingCycle(0);
