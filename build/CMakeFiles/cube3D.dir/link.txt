@@ -1,0 +1,1 @@
+/Users/kentpinero/pspdev/bin/psp-gcc -I/Users/kentpinero/pspdev/psp/include -I/Users/kentpinero/pspdev/psp/sdk/include -DPSP -L/Users/kentpinero/pspdev/lib -L/Users/kentpinero/pspdev/psp/lib -L/Users/kentpinero/pspdev/psp/sdk/lib -Wl,-zmax-page-size=128 CMakeFiles/cube3D.dir/main.c.obj -o cube3D  -lpspdebug -lpspdisplay -lpspge -lpspctrl -lpspgu -lpspgum
