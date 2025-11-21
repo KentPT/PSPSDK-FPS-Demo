@@ -1,6 +1,7 @@
 # build folder
 /build
 /build/CMakeFiles
+/.vscode
 
 # DS_STORE
-.DS_STORE
+.DS_Store
