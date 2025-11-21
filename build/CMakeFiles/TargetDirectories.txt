@@ -1,3 +1,0 @@
-/Users/kentpinero/Downloads/psp-gamedev/demo-game/build/CMakeFiles/moveplayer3D.dir
-/Users/kentpinero/Downloads/psp-gamedev/demo-game/build/CMakeFiles/edit_cache.dir
-/Users/kentpinero/Downloads/psp-gamedev/demo-game/build/CMakeFiles/rebuild_cache.dir
